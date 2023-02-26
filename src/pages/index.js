@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import {BsFillMoonStarsFill} from 'react-icons/bs'
-import {AiFillTwitterCircle, AiFillLinkedin, AiFillYoutube} from 'react-icons/ai'
+import {AiFillTwitterCircle, AiFillLinkedin, AiFillYoutube, AiFillGithub} from 'react-icons/ai'
 import Image from 'next/image'
 import deved from '../../public/dev-ed-wave.png'
 import design from '../../public/design.png'
@@ -44,7 +44,7 @@ export default function Home() {
               </li>
             </ul>
           </nav>
-          <div className="text-center p-10 py-10">
+          <div className="text-center p-5 py-5">
             <h2 className="text-5xl py-2 text-teal-600 font-medium dark:text-teal-400 md:text-6xl">
               Eloistic Digital Corpora
             </h2>
@@ -60,8 +60,8 @@ export default function Home() {
               <AiFillLinkedin />
               <AiFillYoutube />
             </div>
-            <div className="mx-auto bg-gradient-to-b from-teal-500 rounded-full w-80 h-80 relative overflow-hidden mt-20 md:h-96 md:w-96">
-              <Image src={deved} layout="fill" objectFit="cover" />
+            <div className="mx-auto bg-gradient-to-b from-teal-500 rounded-full w-60 h-60 relative overflow-hidden mt-20 md:h-96 md:w-96">
+              <Image className='mx-auto' src={deved} layout="fill" objectFit="cover" />
             </div>
           </div>
         </section>
@@ -83,7 +83,7 @@ export default function Home() {
           </div>
           <div className="lg:flex gap-10">
             <div className="text-center shadow-lg p-10 rounded-xl my-10  dark:bg-white flex-1">
-              <Image src={design} width={100} height={100} />
+              <Image className='mx-auto' src={design} width={100} height={100} />
               <h3 className="text-lg font-medium pt-8 pb-2  ">
                 Beautiful Designs
               </h3>
@@ -98,7 +98,7 @@ export default function Home() {
               <p className="text-gray-800 py-1">Indesign</p>
             </div>
             <div className="text-center shadow-lg p-10 rounded-xl my-10 dark:bg-white flex-1">
-              <Image src={code} width={100} height={100} />
+              <Image className='mx-auto' src={code} width={100} height={100} />
               <h3 className="text-lg font-medium pt-8 pb-2 ">
                 Code your dream project
               </h3>
@@ -113,7 +113,7 @@ export default function Home() {
               <p className="text-gray-800 py-1">Indesign</p>
             </div>
             <div className="text-center shadow-lg p-10 rounded-xl my-10 dark:bg-white flex-1">
-              <Image src={consulting} width={100} height={100} />
+              <Image className='mx-auto' src={consulting} width={100} height={100} />
               <h3 className="text-lg font-medium pt-8 pb-2 ">Consulting</h3>
               <p className="py-2">
                 Are you interested in feedback for your current project? I can
@@ -199,6 +199,25 @@ export default function Home() {
               />
             </div>
           </div>
+        </section>
+        <section className="">
+          <nav className="py-10 flex justify-between dark:text-white">
+            <h1 className="font-burtons text-xl">eloistic</h1>
+            <ul className="flex items-center gap-16 py-3">
+              {/* <li>
+                <BsFillMoonStarsFill
+                  onClick={() => setDarkMode(!darkMode)}
+                  className=" cursor-pointer text-2xl"
+                />
+              </li> */}
+              <li className='flex'>SOURCE
+                <div className='text-3xl'>
+                <a href="https://github.com/mikhacavin/nextjs-personal-page" target="_blank">
+                <AiFillGithub /> </a>
+                </div>
+              </li>
+            </ul>
+          </nav>
         </section>
       </main>
     </div>
