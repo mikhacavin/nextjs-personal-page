@@ -16,6 +16,23 @@ import { useState } from 'react'
 
 export default function Home() {
   const [darkMode, setDarkMode] = useState(false)
+  const createTest = async () => {
+    const randomNum = Math.floor(Math.random() * 1000);
+    const res = await fetch('/api/test/add', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        name: `Test ${randomNum}`,
+        email: `test${randomNum}@test.com`,
+        message: `hello there`,
+      }),
+    });
+    const data = await res.json();
+    console.log(data);
+    alert("Data sent! \n name : "+data.test.name+ "\n email : "+data.test.email +"\n message : "+data.test.message)
+  };
   return (
     <div className={darkMode ? "dark" : ""}>
       <Head>
@@ -48,6 +65,7 @@ export default function Home() {
             <h2 className="text-5xl py-2 text-teal-600 font-medium dark:text-teal-400 md:text-6xl">
               Eloistic Digital Corpora
             </h2>
+            <button onClick={createTest} className="btn">Create Test</button>
             <h3 className="text-2xl py-2 dark:text-white md:text-3xl">
               Developer and designer.
             </h3>
@@ -61,7 +79,7 @@ export default function Home() {
               <AiFillYoutube />
             </div>
             <div className="mx-auto bg-gradient-to-b from-teal-500 rounded-full w-60 h-60 relative overflow-hidden mt-20 md:h-96 md:w-96">
-              <Image className='mx-auto' src={deved} layout="fill" objectFit="cover" />
+              <Image className='mx-auto' src={deved} layout="fill" objectFit="cover"  alt='gambar'/>
             </div>
           </div>
         </section>
@@ -83,7 +101,7 @@ export default function Home() {
           </div>
           <div className="lg:flex gap-10">
             <div className="text-center shadow-lg p-10 rounded-xl my-10  dark:bg-white flex-1">
-              <Image className='mx-auto' src={design} width={100} height={100} />
+              <Image className='mx-auto' src={design} width={100} height={100} alt="gambar"/>
               <h3 className="text-lg font-medium pt-8 pb-2  ">
                 Beautiful Designs
               </h3>
@@ -98,7 +116,7 @@ export default function Home() {
               <p className="text-gray-800 py-1">Indesign</p>
             </div>
             <div className="text-center shadow-lg p-10 rounded-xl my-10 dark:bg-white flex-1">
-              <Image className='mx-auto' src={code} width={100} height={100} />
+              <Image className='mx-auto' src={code} width={100} height={100} alt="gambar" />
               <h3 className="text-lg font-medium pt-8 pb-2 ">
                 Code your dream project
               </h3>
@@ -113,7 +131,7 @@ export default function Home() {
               <p className="text-gray-800 py-1">Indesign</p>
             </div>
             <div className="text-center shadow-lg p-10 rounded-xl my-10 dark:bg-white flex-1">
-              <Image className='mx-auto' src={consulting} width={100} height={100} />
+              <Image className='mx-auto' src={consulting} width={100} height={100} alt="gambar" />
               <h3 className="text-lg font-medium pt-8 pb-2 ">Consulting</h3>
               <p className="py-2">
                 Are you interested in feedback for your current project? I can
@@ -151,6 +169,7 @@ export default function Home() {
                 height={"100%"}
                 layout="responsive"
                 src={web1}
+                alt="gambar"
               />
             </div>
             <div className="basis-1/3 flex-1">
@@ -160,6 +179,7 @@ export default function Home() {
                 height={"100%"}
                 layout="responsive"
                 src={web2}
+                alt="gambar"
               />
             </div>
             <div className="basis-1/3 flex-1">
@@ -169,6 +189,7 @@ export default function Home() {
                 height={"100%"}
                 layout="responsive"
                 src={web3}
+                alt="gambar"
               />
             </div>
             <div className="basis-1/3 flex-1">
@@ -178,6 +199,7 @@ export default function Home() {
                 height={"100%"}
                 layout="responsive"
                 src={web4}
+                alt="gambar"
               />
             </div>
             <div className="basis-1/3 flex-1">
@@ -187,6 +209,7 @@ export default function Home() {
                 height={"100%"}
                 layout="responsive"
                 src={web5}
+                alt="gambar"
               />
             </div>
             <div className="basis-1/3 flex-1">
@@ -196,6 +219,7 @@ export default function Home() {
                 height={"100%"}
                 layout="responsive"
                 src={web6}
+                alt="gambar"
               />
             </div>
           </div>
